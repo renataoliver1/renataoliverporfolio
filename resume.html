@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renata Oliveira | Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .resume-header { border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 50px; }
+        
+        /* Accordion Customization */
+        .accordion-button {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            color: #1a1a1a;
+            padding: 25px;
+            border-left: 4px solid transparent;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #fdf2f6;
+            color: #d48da3;
+            border-left: 4px solid #d48da3;
+            box-shadow: none;
+        }
+
+        .accordion-body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
+            color: #444;
+            padding: 40px;
+            background-color: #fff;
+        }
+
+        .section-subtitle {
+            font-family: 'Bodoni Moda', serif;
+            color: #d48da3;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .client-list { list-style: none; padding-left: 0; }
+        .client-list li { margin-bottom: 10px; }
+        .client-category { font-weight: 700; color: #d48da3; margin-right: 5px; }
+
+        /* Dark Mode Support */
+        body.dark-mode { background-color: #121212 !important; color: #fdfafb !important; }
+        body.dark-mode .navbar, body.dark-mode .dropdown-menu, body.dark-mode .accordion-item, body.dark-mode .accordion-body {
+            background-color: #1e1e1e !important; border-color: #333 !important;
+        }
+        body.dark-mode .accordion-button { background-color: #1e1e1e; color: #fdfafb; }
+        body.dark-mode .accordion-button:not(.collapsed) { background-color: #251e21; color: #d48da3; }
+        body.dark-mode .nav-link, body.dark-mode .dropdown-item { color: #fdfafb !important; }
+        body.dark-mode .resume-header { border-color: #333; }
+    </style>
+</head>
+<body class="font-medium">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-3">
+        <div class="container justify-content-center">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto gap-lg-4 align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">PORTFOLIO ▼</a>
+                        <ul class="dropdown-menu border-0 shadow-sm">
+                            <li><a class="dropdown-item active" href="resume.html">Full Resume</a></li>
+                            <li><a class="dropdown-item" href="digital-showcase.html">Digital Showcase</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">DESIGN THEORY ▼</a>
+                        <ul class="dropdown-menu border-0 shadow-sm">
+                            <li><a class="dropdown-item" href="color-overview.html">Color Overview</a></li>
+                            <li><a class="dropdown-item" href="typographyoverview.html">Typography Overview</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="themeDrop" data-bs-toggle="dropdown" aria-expanded="false">THEME ▼</a>
+                        <ul class="dropdown-menu border-0 shadow-sm text-center">
+                            <li><button class="dropdown-item" onclick="applyTheme('light')">Light Mode</button></li>
+                            <li><button class="dropdown-item" onclick="applyTheme('dark')">Dark Mode</button></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li class="dropdown-header">Font Size</li>
+                            <li><button class="dropdown-item" onclick="applySize('small')">Small</button></li>
+                            <li><button class="dropdown-item" onclick="applySize('medium')">Medium</button></li>
+                            <li><button class="dropdown-item" onclick="applySize('large')">Large</button></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5 pt-5">
+        <div class="text-center resume-header">
+            <h1 class="display-3 luxury-name">RENATA OLIVEIRA</h1>
+            <p class="text-uppercase tracking-widest text-muted small mt-2">Digital Strategy • Photography • Design</p>
+        </div>
+
+        <div class="accordion accordion-flush mx-auto" id="resumeAccordion" style="max-width: 900px;">
+            
+            <div class="accordion-item mb-4 shadow-sm border">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#management">
+                        Executive Social Media Management
+                    </button>
+                </h2>
+                <div id="management" class="accordion-collapse collapse" data-bs-parent="#resumeAccordion">
+                    <div class="accordion-body">
+                        <span class="section-subtitle">Lead Creative Strategist | Westchester Portfolio</span>
+                        <p>Directing intentional visual branding for industry leaders:</p>
+                        <ul class="client-list">
+                            <li><span class="client-category">Medical:</span> Dr. Giovanni Angelino, MD</li>
+                            <li><span class="client-category">Fitness:</span> Fit.con Gym (Chappaqua)</li>
+                            <li><span class="client-category">Beauty:</span> Precious Nails & Spa</li>
+                            <li><span class="client-category">Hospitality:</span> Craft Pizza & Beer, Bia American Kitchen, Old Stone Trattoria.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item mb-4 shadow-sm border">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#photography">
+                        Master Photography (28 Years)
+                    </button>
+                </h2>
+                <div id="photography" class="accordion-collapse collapse" data-bs-parent="#resumeAccordion">
+                    <div class="accordion-body">
+                        <span class="section-subtitle">NYU Degree in Photography</span>
+                        <ul class="client-list">
+                            <li><span class="client-category">Wedding Specialist:</span> Over a decade of luxury storytelling.</li>
+                            <li><span class="client-category">Studio & Family:</span> 28 years of professional portraiture experience.</li>
+                            <li><span class="client-category">Modern Systems:</span> Drone videography and AI-assisted production.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item mb-4 shadow-sm border">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#partnerships">
+                        Global Brand Partnerships
+                    </button>
+                </h2>
+                <div id="partnerships" class="accordion-collapse collapse" data-bs-parent="#resumeAccordion">
+                    <div class="accordion-body">
+                        <p>Representing elite brands through influencer marketing:</p>
+                        <ul class="client-list">
+                            <li><span class="client-category">Luxury & Beauty:</span> YSL, L’Oréal Paris, Pixi Beauty (2026 Campaign Lead), Dove.</li>
+                            <li><span class="client-category">Retail & Lifestyle:</span> Target, Forever 21, welovejetlag.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item mb-4 shadow-sm border">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#education">
+                        Education
+                    </button>
+                </h2>
+                <div id="education" class="accordion-collapse collapse" data-bs-parent="#resumeAccordion">
+                    <div class="accordion-body">
+                        <div class="mb-4">
+                            <span class="section-subtitle">New York University (NYU)</span>
+                            <p>Degree in Photography.</p>
+                        </div>
+                        <div class="mb-4">
+                            <span class="section-subtitle">Westchester Community College</span>
+                            <p>Degrees in Nursing & Web Design.</p>
+                        </div>
+                        <div>
+                            <span class="section-subtitle">Current Training:</span>
+                            <p>Web Design Professional Program (Advanced UI/UX).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="text-center py-5 text-muted small">
+        © 2026 RENATA OLIVEIRA. ALL RIGHTS RESERVED.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        (function() {
+            const savedMode = localStorage.getItem('themeMode');
+            const savedSize = localStorage.getItem('fontSize');
+            if (savedMode === 'dark') { document.body.classList.add('dark-mode'); }
+            if (savedSize) { document.body.classList.add('font-' + savedSize); }
+        })();
+
+        function applyTheme(m) {
+            if (m === 'dark') {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('themeMode', 'dark');
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('themeMode', 'light');
+            }
+        }
+
+        function applySize(s) {
+            document.body.classList.remove('font-small', 'font-medium', 'font-large');
+            document.body.classList.add('font-' + s);
+            localStorage.setItem('fontSize', s);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renata Oliver | Psychology of Brand Color</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Sub-Nav Styling */
+        .sub-nav { background-color: #f8f2f4; padding: 20px 0; border-bottom: 1px solid #eee; }
+        .nav-link-sub { font-family: 'Inter', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #333; text-decoration: none; margin: 0 20px; font-size: 0.85rem; }
+        .nav-link-sub.active { color: #d48da3; text-decoration: underline; text-underline-offset: 8px; }
+
+        /* Article Header Scaling */
+        .article-header {
+            font-family: 'Bodoni Moda', serif;
+            text-transform: uppercase;
+            font-weight: 400;
+            margin: 80px 0 40px;
+            font-size: clamp(1.8rem, 4vw, 3rem); 
+            letter-spacing: 8px; 
+            text-align: center;
+        }
+
+        /* The Main Article Container */
+        .article-body {
+            background: white;
+            padding: 60px 80px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+            border-top: 8px solid #d48da3;
+            max-width: 900px;
+            margin: -30px auto 100px; /* Overlaps the pink sub-nav */
+            position: relative;
+            z-index: 2;
+            line-height: 1.8;
+            font-family: 'Inter', sans-serif;
+            color: #444;
+        }
+
+        /* Luxury Drop Cap */
+        .drop-cap::first-letter {
+            font-family: 'Bodoni Moda', serif;
+            float: left;
+            font-size: 5.5rem;
+            line-height: 0.7;
+            padding-top: 10px;
+            padding-right: 15px;
+            color: #d48da3;
+        }
+
+        /* Blockquote from your screenshot */
+        .editorial-quote {
+            background-color: #fdf2f6;
+            border-left: 5px solid #d48da3;
+            padding: 40px;
+            margin: 45px 0;
+            font-style: italic;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 1.3rem;
+            color: #1a1a1a;
+        }
+
+        .section-title {
+            font-family: 'Bodoni Moda', serif;
+            color: #d48da3;
+            font-size: 1.8rem;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            text-transform: capitalize;
+        }
+
+        /* Dark Mode Support */
+        body.dark-mode { background-color: #121212 !important; color: #fdfafb !important; }
+        body.dark-mode .navbar, body.dark-mode .article-body { background-color: #1e1e1e !important; border-color: #333 !important; }
+        body.dark-mode .editorial-quote { background-color: #251e21; color: #fdfafb; }
+        body.dark-mode .article-body { color: #ccc; }
+    </style>
+</head>
+<body class="font-medium">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-3">
+        <div class="container justify-content-center">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto gap-lg-4 align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">PORTFOLIO ▼</a>
+                        <ul class="dropdown-menu border-0 shadow-sm">
+                            <li><a class="dropdown-item" href="resume.html">Full Resume</a></li>
+                            <li><a class="dropdown-item" href="digital-showcase.html">Digital Showcase</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">DESIGN THEORY ▼</a>
+                        <ul class="dropdown-menu border-0 shadow-sm">
+                            <li><a class="dropdown-item active" href="color-overview.html">Color Overview</a></li>
+                            <li><a class="dropdown-item" href="typographyoverview.html">Typography</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="themeDrop" data-bs-toggle="dropdown">THEME ▼</a>
+                        <ul class="dropdown-menu border-0 shadow-sm text-center">
+                            <li><button class="dropdown-item" onclick="applyTheme('light')">Light Mode</button></li>
+                            <li><button class="dropdown-item" onclick="applyTheme('dark')">Dark Mode</button></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><button class="dropdown-item" onclick="applySize('small')">Small</button></li>
+                            <li><button class="dropdown-item" onclick="applySize('medium')">Medium</button></li>
+                            <li><button class="dropdown-item" onclick="applySize('large')">Large</button></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="sub-nav text-center">
+        <a href="color-overview.html" class="nav-link-sub">1. OVERVIEW</a>
+        <a href="color-themes.html" class="nav-link-sub">2. COLOR THEMES</a>
+        <a href="color-article.html" class="nav-link-sub active">3. COLOR ARTICLE</a>
+    </div>
+
+    <div class="container">
+        <h1 class="article-header">THE IMPACT OF VISUAL STORYTELLING</h1>
+
+        <div class="article-body">
+            <p class="drop-cap">
+                In the fast-paced world of digital consumption, color acts as the primary driver of subconscious decision-making. Before a user reads a single word of your caption or watches a second of your reel, they have already felt an emotion triggered by your visual palette.
+            </p>
+
+            <div class="editorial-quote">
+                "Color does not just describe a product; it dictates how the audience feels about the brand's authority and quality."
+            </div>
+
+            <h2 class="section-title">The Luxury of Neutrals</h2>
+            <p>
+                In my branding, I utilize specific neutrals to ground the experience. These low-saturation hues are synonymous with high-fashion and minimalism. They allow photography—whether it's a makeup close-up or a stunning skyline in Dubai—to take center stage without visual clutter.
+            </p>
+
+            <h2 class="section-title">The Power of Pink</h2>
+            <p>
+                My signature accent, <strong>#D470A2</strong>, is used sparingly. In color psychology, this shade of pink balances the energy of red with the purity of white. It suggests modern femininity and approachability, which is essential for building a community.
+            </p>
+
+            <h2 class="section-title">Visual Consistency</h2>
+            <p>
+                By maintaining a strict color hierarchy across my portfolio, I establish "Brand Recognition." Whether a follower sees my content on social media or this website, the cohesive color story ensures they immediately recognize the Renata Oliveira aesthetic.
+            </p>
+        </div>
+    </div>
+
+    <footer class="text-center py-5 text-muted small">
+        © 2026 RENATA OLIVEIRA. ALL RIGHTS RESERVED.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function applyTheme(m) { m === 'dark' ? document.body.classList.add('dark-mode') : document.body.classList.remove('dark-mode'); }
+        function applySize(s) { document.body.classList.remove('font-small', 'font-medium', 'font-large'); document.body.classList.add('font-' + s); }
+    </script>
+    <script>
+    // 1. RUN IMMEDIATELY ON LOAD
+    (function() {
+        const savedMode = localStorage.getItem('themeMode');
+        const savedSize = localStorage.getItem('fontSize');
+        if (savedMode === 'dark') { document.body.classList.add('dark-mode'); }
+        if (savedSize) { document.body.classList.add('font-' + savedSize); }
+    })();
+
+    // 2. THEME SWITCHER
+    function applyTheme(m) {
+        if (m === 'dark') {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('themeMode', 'dark');
+        } else {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('themeMode', 'light');
+        }
+    }
+
+    // 3. FONT SIZE SWITCHER
+    function applySize(s) {
+        document.body.classList.remove('font-small', 'font-medium', 'font-large');
+        document.body.classList.add('font-' + s);
+        localStorage.setItem('fontSize', s);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+/* --- GLOBAL LUXURY BASE --- */
+body {
+    transition: background-color 0.4s ease, color 0.4s ease;
+    background-color: #ffffff;
+    color: #1a1a1a;
+}
+
+/* Luxury Typography */
+.luxury-name {
+    font-family: 'Bodoni Moda', serif;
+    letter-spacing: 15px;
+    font-weight: 400;
+    color: #1a1a1a;
+    text-transform: uppercase;
+}
+
+/* Accordion Styling to match Screenshot */
+.accordion-item {
+    border: none !important;
+    background-color: #fdfafb; /* Very light pink/white background */
+    border-left: 6px solid #d48da3 !important; /* The pink vertical line */
+    transition: all 0.3s ease;
+}
+
+.accordion-button {
+    background-color: #fdfafb !important;
+    color: #1a1a1a !important;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    padding: 25px;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+    box-shadow: none;
+}
+
+/* Footer Tweak */
+footer {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
+
+/* ============================================================
+   THEME ENGINE: DARK MODE & FONT SCALING
+   ============================================================ */
+
+/* 1. DARK MODE OVERRIDES */
+body.dark-mode {
+    background-color: #121212 !important;
+    color: #fdfafb !important;
+}
+
+/* Update Luxury Name in Dark Mode */
+body.dark-mode .luxury-name {
+    color: #fdfafb !important;
+}
+
+/* Update Accordion in Dark Mode */
+body.dark-mode .accordion-item,
+body.dark-mode .accordion-button {
+    background-color: #1e1e1e !important;
+    color: #fdfafb !important;
+}
+
+/* Update Navbar & Theory Boxes */
+body.dark-mode .navbar,
+body.dark-mode .theory-box,
+body.dark-mode .article-container,
+body.dark-mode .dropdown-menu {
+    background-color: #1e1e1e !important;
+    border-color: #333333 !important;
+    color: #fdfafb !important;
+}
+
+/* Hover effects for Dark Mode dropdowns */
+body.dark-mode .dropdown-item {
+    color: #fdfafb !important;
+}
+body.dark-mode .dropdown-item:hover {
+    background-color: #2d2d2d !important;
+    color: #d48da3 !important;
+}
+
+/* 2. FONT SCALING LOGIC */
+/* Small */
+body.font-small { font-size: 0.85rem !important; }
+body.font-small .luxury-name { font-size: 2.5rem !important; }
+
+/* Medium (Standard) */
+body.font-medium { font-size: 1.05rem !important; }
+
+/* Large */
+body.font-large { font-size: 1.3rem !important; }
+body.font-large .luxury-name { 
+    font-size: 4.5rem !important; 
+    letter-spacing: 10px; /* Reducing spacing slightly for large font so it stays on one line */
+}
+
+/* --- THEME MENU HEADER (Matching Screenshot) --- */
+.dropdown-header {
+    color: #d48da3;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+}
+/* Button styling for the professional finish */
+.btn-outline-dark {
+    border: 1px solid #1a1a1a;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+    background-color: #d48da3 !important; /* Brand Pink on hover */
+    border-color: #d48da3 !important;
+    color: white !important;
+}
+
+/* Caption refinement */
+.showcase-caption {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.8;
+    text-align: justify;
+}
+/* --- Global Base --- */
+body { transition: background-color 0.3s ease, color 0.3s ease; background-color: #fff; color: #1a1a1a; }
+.luxury-name { font-family: 'Bodoni Moda', serif; letter-spacing: 15px; text-transform: uppercase; }
+
+/* --- Dark Mode Overrides --- */
+body.dark-mode { background-color: #121212 !important; color: #fdfafb !important; }
+body.dark-mode .navbar, body.dark-mode .theory-box, body.dark-mode .article-body, body.dark-mode .dropdown-menu {
+    background-color: #1e1e1e !important; border-color: #333 !important; color: #fdfafb !important;
+}
+body.dark-mode .nav-link, body.dark-mode .dropdown-item { color: #fdfafb !important; }
+body.dark-mode .nav-link:hover { color: #d48da3 !important; }
+body.dark-mode .sub-nav { background-color: #251e21 !important; }
+
+/* --- Font Scaling --- */
+body.font-small { font-size: 0.85rem !important; }
+body.font-medium { font-size: 1.1rem !important; }
+body.font-large { font-size: 1.4rem !important; }
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh; /* Ensures the whole background stays dark */
+}
+
+/* Ensure the navbar matches the mode instantly */
+body.dark-mode .navbar {
+    background-color: #1e1e1e !important;
+    border-color: #333 !important;
+}
