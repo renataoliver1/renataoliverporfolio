@@ -6,57 +6,77 @@
     <title>Renata Oliveira | Resume</title>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     
     <style>
         .resume-header { border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 50px; }
         
-        /* Accordion Customization */
+        /* Accordion Customization to match your screenshots */
+        .accordion-item { border: none; margin-bottom: 1rem; }
+        
         .accordion-button {
             font-family: 'Inter', sans-serif;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
             font-size: 0.9rem;
             color: #1a1a1a;
             padding: 25px;
-            border-left: 4px solid transparent;
+            background-color: #fdfafb;
+            border-left: 5px solid #d48da3;
         }
 
         .accordion-button:not(.collapsed) {
             background-color: #fdf2f6;
             color: #d48da3;
-            border-left: 4px solid #d48da3;
             box-shadow: none;
+        }
+
+        .accordion-button::after {
+            content: '+';
+            background-image: none;
+            font-size: 1.2rem;
+            transform: none;
+            color: #ccc;
+        }
+
+        .accordion-button:not(.collapsed)::after {
+            content: '−';
+            transform: none;
+            color: #d48da3;
         }
 
         .accordion-body {
             font-family: 'Inter', sans-serif;
             line-height: 1.8;
             color: #444;
-            padding: 40px;
+            padding: 30px 50px;
             background-color: #fff;
         }
 
-        .section-subtitle {
+        .resume-category-title {
             font-family: 'Bodoni Moda', serif;
             color: #d48da3;
             font-size: 1.2rem;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             display: block;
         }
 
-        .client-list { list-style: none; padding-left: 0; }
-        .client-list li { margin-bottom: 10px; }
-        .client-category { font-weight: 700; color: #d48da3; margin-right: 5px; }
+        .client-label { font-weight: 700; color: #d48da3; margin-right: 5px; }
+
+        /* Social Icon Colors */
+        .social-icons a { font-size: 1.8rem; margin: 0 15px; display: inline-block; transition: transform 0.3s; }
+        .social-icons a:hover { transform: scale(1.1); }
+        .fa-facebook-f { color: #1877F2; }
+        .fa-instagram { color: #E4405F; }
+        .fa-envelope { color: #007bff; }
 
         /* Dark Mode Support */
         body.dark-mode { background-color: #121212 !important; color: #fdfafb !important; }
-        body.dark-mode .navbar, body.dark-mode .dropdown-menu, body.dark-mode .accordion-item, body.dark-mode .accordion-body {
-            background-color: #1e1e1e !important; border-color: #333 !important;
-        }
-        body.dark-mode .accordion-button { background-color: #1e1e1e; color: #fdfafb; }
-        body.dark-mode .accordion-button:not(.collapsed) { background-color: #251e21; color: #d48da3; }
+        body.dark-mode .navbar, body.dark-mode .dropdown-menu { background-color: #1e1e1e !important; border-color: #333 !important; }
+        body.dark-mode .accordion-button { background-color: #1e1e1e; color: #fdfafb; border-color: #d48da3; }
+        body.dark-mode .accordion-body { background-color: #1a1a1a; color: #ccc; }
         body.dark-mode .nav-link, body.dark-mode .dropdown-item { color: #fdfafb !important; }
         body.dark-mode .resume-header { border-color: #333; }
     </style>
@@ -71,30 +91,28 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto gap-lg-4 align-items-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
-                    
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown" aria-expanded="false">PORTFOLIO ▼</a>
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">PORTFOLIO ▼</a>
                         <ul class="dropdown-menu border-0 shadow-sm">
                             <li><a class="dropdown-item active" href="resume.html">Full Resume</a></li>
                             <li><a class="dropdown-item" href="digital-showcase.html">Digital Showcase</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="quiz-mine.html">Design Quiz</a></li>
                         </ul>
                     </li>
-
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">DESIGN THEORY ▼</a>
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">DESIGN THEORY ▼</a>
                         <ul class="dropdown-menu border-0 shadow-sm">
                             <li><a class="dropdown-item" href="color-overview.html">Color Overview</a></li>
                             <li><a class="dropdown-item" href="typographyoverview.html">Typography Overview</a></li>
                         </ul>
                     </li>
-
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="themeDrop" data-bs-toggle="dropdown" aria-expanded="false">THEME ▼</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="themeDrop" data-bs-toggle="dropdown">THEME ▼</a>
                         <ul class="dropdown-menu border-0 shadow-sm text-center">
                             <li><button class="dropdown-item" onclick="applyTheme('light')">Light Mode</button></li>
                             <li><button class="dropdown-item" onclick="applyTheme('dark')">Dark Mode</button></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li class="dropdown-header">Font Size</li>
                             <li><button class="dropdown-item" onclick="applySize('small')">Small</button></li>
                             <li><button class="dropdown-item" onclick="applySize('medium')">Medium</button></li>
                             <li><button class="dropdown-item" onclick="applySize('large')">Large</button></li>
@@ -111,83 +129,73 @@
             <p class="text-uppercase tracking-widest text-muted small mt-2">Digital Strategy • Photography • Design</p>
         </div>
 
-        <div class="accordion accordion-flush mx-auto" id="resumeAccordion" style="max-width: 900px;">
+        <div class="accordion mx-auto" id="resumeAccordion" style="max-width: 1000px;">
             
-            <div class="accordion-item mb-4 shadow-sm border">
+            <div class="accordion-item shadow-sm">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#management">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
                         Executive Social Media Management
                     </button>
                 </h2>
-                <div id="management" class="accordion-collapse collapse" data-bs-parent="#resumeAccordion">
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#resumeAccordion">
                     <div class="accordion-body">
-                        <span class="section-subtitle">Lead Creative Strategist | Westchester Portfolio</span>
+                        <span class="resume-category-title">Lead Creative Strategist | Westchester Portfolio</span>
                         <p>Directing intentional visual branding for industry leaders:</p>
-                        <ul class="client-list">
-                            <li><span class="client-category">Medical:</span> Dr. Giovanni Angelino, MD</li>
-                            <li><span class="client-category">Fitness:</span> Fit.con Gym (Chappaqua)</li>
-                            <li><span class="client-category">Beauty:</span> Precious Nails & Spa</li>
-                            <li><span class="client-category">Hospitality:</span> Craft Pizza & Beer, Bia American Kitchen, Old Stone Trattoria.</li>
+                        <ul class="list-unstyled">
+                            <li><span class="client-label">Medical:</span> Dr. Giovanni Angelino, MD</li>
+                            <li><span class="client-label">Fitness:</span> Fit.con Gym (Chappaqua)</li>
+                            <li><span class="client-label">Beauty:</span> Precious Nails & Spa</li>
+                            <li><span class="client-label">Hospitality:</span> Craft Pizza & Beer, Bia American Kitchen, Old Stone Trattoria.</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="accordion-item mb-4 shadow-sm border">
+            <div class="accordion-item shadow-sm">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#photography">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
                         Master Photography (28 Years)
                     </button>
                 </h2>
-                <div id="photography" class="accordion-collapse collapse" data-bs-parent="#resumeAccordion">
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#resumeAccordion">
                     <div class="accordion-body">
-                        <span class="section-subtitle">NYU Degree in Photography</span>
-                        <ul class="client-list">
-                            <li><span class="client-category">Wedding Specialist:</span> Over a decade of luxury storytelling.</li>
-                            <li><span class="client-category">Studio & Family:</span> 28 years of professional portraiture experience.</li>
-                            <li><span class="client-category">Modern Systems:</span> Drone videography and AI-assisted production.</li>
+                        <span class="resume-category-title">NYU Degree in Photography</span>
+                        <ul class="list-unstyled">
+                            <li><span class="client-label">Wedding Specialist:</span> Over a decade of luxury storytelling.</li>
+                            <li><span class="client-label">Studio & Family:</span> 28 years of professional portraiture experience.</li>
+                            <li><span class="client-label">Modern Systems:</span> Drone videography and AI-assisted production.</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="accordion-item mb-4 shadow-sm border">
+            <div class="accordion-item shadow-sm">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#partnerships">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
                         Global Brand Partnerships
                     </button>
                 </h2>
-                <div id="partnerships" class="accordion-collapse collapse" data-bs-parent="#resumeAccordion">
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#resumeAccordion">
                     <div class="accordion-body">
                         <p>Representing elite brands through influencer marketing:</p>
-                        <ul class="client-list">
-                            <li><span class="client-category">Luxury & Beauty:</span> YSL, L’Oréal Paris, Pixi Beauty (2026 Campaign Lead), Dove.</li>
-                            <li><span class="client-category">Retail & Lifestyle:</span> Target, Forever 21, welovejetlag.</li>
+                        <ul class="list-unstyled">
+                            <li><span class="client-label">Luxury & Beauty:</span> YSL, L'Oréal Paris, Pixi Beauty (2026 Campaign Lead), Dove.</li>
+                            <li><span class="client-label">Retail & Lifestyle:</span> Target, Forever 21, welovejetlag.</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="accordion-item mb-4 shadow-sm border">
+            <div class="accordion-item shadow-sm">
                 <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#education">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
                         Education
                     </button>
                 </h2>
-                <div id="education" class="accordion-collapse collapse" data-bs-parent="#resumeAccordion">
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#resumeAccordion">
                     <div class="accordion-body">
-                        <div class="mb-4">
-                            <span class="section-subtitle">New York University (NYU)</span>
-                            <p>Degree in Photography.</p>
-                        </div>
-                        <div class="mb-4">
-                            <span class="section-subtitle">Westchester Community College</span>
-                            <p>Degrees in Nursing & Web Design.</p>
-                        </div>
-                        <div>
-                            <span class="section-subtitle">Current Training:</span>
-                            <p>Web Design Professional Program (Advanced UI/UX).</p>
-                        </div>
+                        <strong>Web Design Professional</strong><br>
+                        Focusing on HTML5, CSS3, and Bootstrap 5 responsive frameworks.
                     </div>
                 </div>
             </div>
@@ -195,8 +203,13 @@
         </div>
     </main>
 
-    <footer class="text-center py-5 text-muted small">
-        © 2026 RENATA OLIVEIRA. ALL RIGHTS RESERVED.
+    <footer class="text-center py-5">
+        <div class="social-icons mb-3">
+            <a href="https://www.facebook.com/welovejetlag" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/welovejetlag" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:renatamartello@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="text-muted small">© 2026 RENATA OLIVEIRA. ALL RIGHTS RESERVED.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
