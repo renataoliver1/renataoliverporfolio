@@ -6,6 +6,7 @@
     <title>Renata Oliver | Typography Overview</title>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     
     <style>
@@ -34,7 +35,6 @@
             margin-bottom: 50px;
         }
 
-        /* The Theory Box */
         .theory-box {
             background: white;
             padding: 60px;
@@ -60,12 +60,34 @@
             color: #1a1a1a;
         }
 
+        .btn-next-step {
+            background-color: #d48da3;
+            color: white !important;
+            padding: 15px 35px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        /* --- Branded Social Icon Colors --- */
+        .social-icons a { font-size: 1.8rem; margin: 0 15px; display: inline-block; transition: transform 0.3s; }
+        .social-icons a:hover { transform: scale(1.1); }
+        .fa-facebook-f { color: #1877F2; } 
+        .fa-instagram { color: #E4405F; }  
+        .fa-envelope { color: #007bff; }
+
         /* Dark Mode Support */
         body.dark-mode { background-color: #121212 !important; color: #fdfafb !important; }
-        body.dark-mode .navbar, body.dark-mode .theory-box { background-color: #1e1e1e !important; border-color: #333 !important; }
+        body.dark-mode .navbar, body.dark-mode .theory-box, body.dark-mode .dropdown-menu { background-color: #1e1e1e !important; border-color: #333 !important; }
         body.dark-mode .typography-item h3 { color: #fdfafb; }
-        body.dark-mode .nav-link-sub { color: #fdfafb; }
+        body.dark-mode .nav-link-sub, body.dark-mode .nav-link, body.dark-mode .dropdown-item { color: #fdfafb !important; }
         body.dark-mode .typography-item { color: #ccc; }
+        body.dark-mode .fa-facebook-f { color: #4c9aff; }
+        body.dark-mode .fa-instagram { color: #ff5d7b; }
+        body.dark-mode .fa-envelope { color: #4da3ff; }
     </style>
 </head>
 <body class="font-medium">
@@ -80,15 +102,17 @@
                     <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
                     
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="portfolioDrop" data-bs-toggle="dropdown" aria-expanded="false">PORTFOLIO ▼</a>
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">PORTFOLIO ▼</a>
                         <ul class="dropdown-menu border-0 shadow-sm">
                             <li><a class="dropdown-item" href="resume.html">Full Resume</a></li>
                             <li><a class="dropdown-item" href="digital-showcase.html">Digital Showcase</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="quiz-mine.html">Marketing Quiz</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="theoryDrop" data-bs-toggle="dropdown" aria-expanded="false">DESIGN THEORY ▼</a>
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">DESIGN THEORY ▼</a>
                         <ul class="dropdown-menu border-0 shadow-sm">
                             <li><a class="dropdown-item" href="color-overview.html">Color Overview</a></li>
                             <li><a class="dropdown-item active" href="typographyoverview.html">Typography</a></li>
@@ -96,12 +120,11 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="themeDrop" data-bs-toggle="dropdown" aria-expanded="false">THEME ▼</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="themeDrop" data-bs-toggle="dropdown">THEME ▼</a>
                         <ul class="dropdown-menu border-0 shadow-sm text-center">
                             <li><button class="dropdown-item" onclick="applyTheme('light')">Light Mode</button></li>
                             <li><button class="dropdown-item" onclick="applyTheme('dark')">Dark Mode</button></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li class="dropdown-header">Font Size</li>
                             <li><button class="dropdown-item" onclick="applySize('small')">Small</button></li>
                             <li><button class="dropdown-item" onclick="applySize('medium')">Medium</button></li>
                             <li><button class="dropdown-item" onclick="applySize('large')">Large</button></li>
@@ -122,24 +145,34 @@
         <h1 class="luxury-header">THE ART OF TYPOGRAPHY</h1>
         <p class="luxury-subtitle">The Silent Voice of Branding</p>
         
-        <div class="theory-box shadow-sm">
-            <div class="typography-item">
+        <div class="theory-box shadow-sm text-center">
+            <div class="typography-item text-start">
                 <h3>Hierarchy</h3>
                 <p>Establishing a visual order that guides the reader’s eye through the content using size, weight, and spacing.</p>
             </div>
-            <div class="typography-item">
+            <div class="typography-item text-start">
                 <h3>Readability</h3>
                 <p>The ease with which a reader can recognize words and sentences, ensuring the brand message is clear and effortless.</p>
             </div>
-            <div class="typography-item">
+            <div class="typography-item text-start">
                 <h3>Personality</h3>
                 <p>Typefaces carry emotional weight; serif fonts evoke tradition and luxury, while sans-serifs feel modern and approachable.</p>
             </div>
+            
+            <a href="typography-article.html" class="btn-next-step">Step 5: Typography Article →</a>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <footer class="text-center py-5">
+        <div class="social-icons mb-3">
+            <a href="https://www.facebook.com/welovejetlag" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/welovejetlag" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:renatamartello@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="text-muted small">© 2026 RENATA OLIVEIRA. ALL RIGHTS RESERVED.</p>
+    </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         (function() {
             const savedMode = localStorage.getItem('themeMode');
