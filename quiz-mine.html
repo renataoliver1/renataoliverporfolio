@@ -20,6 +20,7 @@
         
         /* Branded Icons */
         .social-icons a { font-size: 1.8rem; margin: 0 15px; display: inline-block; transition: transform 0.3s; }
+        .social-icons a:hover { transform: scale(1.1); }
         .fa-facebook-f { color: #1877F2; } 
         .fa-instagram { color: #E4405F; }  
         .fa-envelope { color: #007bff; }
@@ -79,7 +80,7 @@
     <main class="container my-5 pt-5">
         <div class="text-center mb-5">
             <h1 class="luxury-name display-3">MARKETING IQ</h1>
-            <p class="text-muted small letter-spacing-2">TESTING YOUR DIGITAL STRATEGY ALIGNMENT</p>
+            <p class="text-muted small letter-spacing-2 text-uppercase">Testing Your Digital Strategy Alignment</p>
         </div>
 
         <div class="row justify-content-center">
@@ -87,7 +88,7 @@
                 <form id="marketingQuiz">
                     <div class="card quiz-card mb-4 p-4 shadow-sm">
                         <h5 class="fw-bold mb-3">01. Engagement Analytics</h5>
-                        <p>Which metric is the strongest indicator of converting a community into brand advocates?</p>
+                        <p>Which metric is the strongest indicator that your community is actually converting into brand advocates?</p>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="radio" name="q1" value="wrong" id="q1a">
                             <label class="form-check-label" for="q1a">High impression count (Reach)</label>
@@ -107,26 +108,26 @@
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="radio" name="q2" value="wrong" id="q2b">
-                            <label class="form-check-label" for="q2b">It allows the brand to use more fonts</label>
+                            <label class="form-check-label" for="q2b">It allows for as many fonts as possible</label>
                         </div>
                     </div>
 
                     <div class="card quiz-card mb-4 p-4 shadow-sm">
                         <h5 class="fw-bold mb-3">03. SEO Strategy</h5>
-                        <p>What is the primary benefit of using "Alt Text" in captions?</p>
+                        <p>What is the primary benefit of using "Alt Text" in social media captions?</p>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="radio" name="q3" value="correct" id="q3a">
                             <label class="form-check-label" for="q3a">It helps algorithms surface content to the right audience</label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="radio" name="q3" value="wrong" id="q3b">
-                            <label class="form-check-label" for="q3b">It makes captions look longer</label>
+                            <label class="form-check-label" for="q3b">It makes captions look longer and more professional</label>
                         </div>
                     </div>
 
                     <div class="card quiz-card mb-4 p-4 shadow-sm">
                         <h5 class="fw-bold mb-3">04. Evergreen Content</h5>
-                        <p>Which content remains relevant long after its initial post date?</p>
+                        <p>Which type of content remains relevant long after its initial post date?</p>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="radio" name="q4" value="wrong" id="q4a">
                             <label class="form-check-label" for="q4a">Trending news and viral challenges</label>
@@ -139,14 +140,14 @@
 
                     <div class="card quiz-card mb-4 p-4 shadow-sm">
                         <h5 class="fw-bold mb-3">05. Conversion Psychology</h5>
-                        <p>Why is "User-Generated Content" (UGC) often more effective?</p>
+                        <p>Why is "User-Generated Content" (UGC) often more effective for brand growth?</p>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="radio" name="q5" value="correct" id="q5a">
                             <label class="form-check-label" for="q5a">It provides authentic social proof that builds trust</label>
                         </div>
                         <div class="form-check mb-2">
                             <input class="form-check-input" type="radio" name="q5" value="wrong" id="q5b">
-                            <label class="form-check-label" for="q5b">It is always cheaper to produce</label>
+                            <label class="form-check-label" for="q5b">It is always cheaper to produce than studio shoots</label>
                         </div>
                     </div>
 
@@ -159,6 +160,9 @@
                     <h2 class="luxury-name h1 mb-3">RESULT</h2>
                     <h3 id="scoreText" class="display-4 fw-bold"></h3>
                     <p id="feedbackText" class="lead text-secondary mt-3"></p>
+                    <div class="mt-4">
+                        <a href="../index.html" class="btn btn-outline-dark px-4">BACK TO HOME</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -177,15 +181,46 @@
     
     <script>
         function calculateResults() {
-            let score = 0;
             const form = document.getElementById('marketingQuiz');
             const data = new FormData(form);
-            for (let entry of data.values()) { if (entry === 'correct') score++; }
-            document.getElementById('scoreText').innerText = score + " / 5";
-            document.getElementById('resultArea').classList.remove('d-none');
-            document.getElementById('resultArea').scrollIntoView({ behavior: 'smooth' });
+            const totalQuestions = 5;
+            
+            // Check if all questions are answered
+            let answersGiven = 0;
+            for (let entry of data.values()) {
+                answersGiven++;
+            }
+
+            if (answersGiven < totalQuestions) {
+                alert("✨ Almost there! Please answer all 5 questions so we can reveal your true Marketing IQ.");
+                return;
+            }
+
+            // Calculate score
+            let score = 0;
+            for (let entry of data.values()) { 
+                if (entry === 'correct') score++; 
+            }
+
+            // Display Results
+            const resultArea = document.getElementById('resultArea');
+            document.getElementById('scoreText').innerText = score + " / " + totalQuestions;
+            resultArea.classList.remove('d-none');
+
+            let feedback = "";
+            if (score === 5) {
+                feedback = "EXPERT: Your strategy is perfectly aligned with luxury digital standards.";
+            } else if (score >= 3) {
+                feedback = "STRATEGIST: You have a solid foundation, but there is room to optimize.";
+            } else {
+                feedback = "LEARNER: Let's connect to elevate your brand's digital presence.";
+            }
+            
+            document.getElementById('feedbackText').innerText = feedback;
+            resultArea.scrollIntoView({ behavior: 'smooth' });
         }
 
+        // Theme and Size memory
         (function() {
             const savedMode = localStorage.getItem('themeMode');
             const savedSize = localStorage.getItem('fontSize');
